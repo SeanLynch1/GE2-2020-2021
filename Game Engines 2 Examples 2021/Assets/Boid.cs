@@ -27,14 +27,13 @@ public class Boid : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine(transform.position, transform.position + force * 10);
     }
-
+    public SteeringBehaviour[] behavioursArray;
     // Use this for initialization
     void Start()
     {
+         behavioursArray = GetComponents<SteeringBehaviour>(); //Adds Classes Attached To This Game Object of Type SteeringBehaviour
 
-        SteeringBehaviour[] behaviours = GetComponents<SteeringBehaviour>();
-
-        foreach (SteeringBehaviour b in behaviours)
+        foreach (SteeringBehaviour b in behavioursArray)
         {
             this.behaviours.Add(b);            
         }
@@ -111,6 +110,7 @@ public class Boid : MonoBehaviour
         
         if (velocity.magnitude > 0)
         {
+
             Vector3 tempUp = Vector3.Lerp(transform.up, Vector3.up + (acceleration * banking), Time.deltaTime * 3.0f);
             transform.LookAt(transform.position + velocity, tempUp);
 

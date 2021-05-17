@@ -77,12 +77,6 @@ public class BigBoid : MonoBehaviour
 
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     public Vector3 PlayerSteering()
     {
         Vector3 force = Vector3.zero;

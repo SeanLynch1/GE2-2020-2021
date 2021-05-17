@@ -801,6 +801,7 @@ MonoBehaviour:
   banking: 0.1
   maxSpeed: 5
   maxForce: 10
+  behavioursArray: []
 --- !u!114 &1039729040
 MonoBehaviour:
   m_ObjectHideFlags: 0
